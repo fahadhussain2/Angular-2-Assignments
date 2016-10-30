@@ -1,0 +1,23 @@
+<div class="container">
+<div class="col-sm-2" id="vote">
+  <h1>
+   {{article.vote}}
+   </h1> <span id="points"> points</span>
+   <br/>
+   <br/>
+   
+</div>
+<div class="col-sm-10" id="article">
+  <h3>
+ {{ article.title }}
+  </h3>
+
+
+<div>
+  <a href="{{article.link}}">({{article.domain()}})</a> <br/><br/>
+  <a (click)="upVote()"><span class="glyphicon glyphicon-arrow-up">upvote</span></a>
+  <a (click)="downVote()"><span class="glyphicon glyphicon-arrow-down">downvote</span></a>
+</div>
+</div>
+</div>
+<hr/>

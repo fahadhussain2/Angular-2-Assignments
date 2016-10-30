@@ -1,0 +1,21 @@
+
+#vote
+{
+    background-color: lightblue;
+}
+
+h1
+{
+    font-size: 42px;
+    text-align: center;
+}
+
+#points
+{
+    margin-left: 62px;
+}
+
+a
+{
+    color: green;
+}
