@@ -1,0 +1,17 @@
+.container
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+hr
+{
+    border-width: 1px;
+    border-style: inset;
+}
+
+.vline
+{
+     border-right: thin solid black;
+}
