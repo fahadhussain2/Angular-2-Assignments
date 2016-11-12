@@ -1,0 +1,15 @@
+hr
+{
+    border-width: 1px;
+    border-style: inset;
+}
+
+.vline
+{
+     border-right: thin solid black;
+}
+
+#delete_btn
+{
+    padding-top: 75px;
+}
