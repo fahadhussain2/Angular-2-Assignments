@@ -1,0 +1,10 @@
+<ul class="list-group">
+
+  <li class="list-group-item" *ngFor="let product of products" [class.selected]="isSelected(product)">
+    <span class="badge">{{product.id}}</span>{{product.name}}
+    <button class="btn btn-info " (click)=onSelect(product)>View</button>
+    </li>
+</ul>
+
+
+
