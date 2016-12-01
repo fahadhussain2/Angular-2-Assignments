@@ -1,0 +1,107 @@
+
+
+<div class="container">
+  <h1>
+  {{title}}
+</h1>
+
+<form [formGroup]="userForm"
+(ngSubmit)="onSubmit()">
+
+<div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name" #refName>
+    <div *ngIf="userForm.controls['name'].hasError('required') && userForm.controls['name'].dirty" class="alert alert-danger">
+     <span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter your name </strong>    
+    </div>
+
+    <div *ngIf="userForm.controls['name'].hasError('minlength')" class="alert alert-danger">
+      <span class="glyphicon glyphicon-warning-sign"></span> <strong> provide atleast 5 characters </strong>
+    </div>
+
+    <div *ngIf="userForm.controls['name'].hasError('maxlength')" class="alert alert-danger">
+      <span class="glyphicon glyphicon-warning-sign"></span><strong> Please do not exceed 10 characters</strong>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" formControlName="uname" #myname>
+    
+    <div *ngIf="userForm.controls['uname'].hasError('underscorenotfound') && userForm.controls['uname'].dirty" class="alert alert-danger">
+     <span class="glyphicon glyphicon-warning-sign"></span><strong> please enter username with underscore </strong> 
+     
+    </div> 
+    <div *ngIf="userForm.controls['uname'].hasError('invalidUname') && userForm.controls['uname'].dirty" class="alert alert-danger">
+    <span class="glyphicon glyphicon-warning-sign"></span> <strong> must start with capital letter</strong> 
+    </div>
+  </div>
+
+  <div formGroupName="passwordfields">
+
+     <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" formControlName="pass">
+    <div *ngIf="userForm.controls['passwordfields'].controls['pass'].hasError('invalidPassword') && userForm.controls['passwordfields'].controls['pass'].dirty" class="alert alert-danger">
+      <span class="glyphicon glyphicon-warning-sign"></span> <strong> Please enter Minimum 8 characters at least 1 Alphabet, 1 Number and 1 Special Character:</strong>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label>Confirm Password</label>
+    <input type="password" class="form-control" formControlName="cpass" #pass>
+    
+    <div *ngIf="userForm.controls['passwordfields'].hasError('mismatchedPasswords')" class="alert alert-danger">
+      <span class="glyphicon glyphicon-warning-sign"></span> <strong> does not match </strong>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="form-group">
+    <label>E-mail</label>
+    <input type="text" class="form-control" formControlName="email">
+    <div *ngIf="userForm.controls['email'].hasError('pattern')" class="alert alert-danger">
+     <span class="glyphicon glyphicon-warning-sign"></span> <strong> Please enter correct email address</strong>
+    </div>
+  </div>
+
+<div formGroupName="address">
+
+<div class="form-group">
+    <label>Street</label>
+    <input type="text" class="form-control" formControlName="street">
+  </div>
+
+  <div class="form-group">
+    <label>City</label>
+    <input type="text" class="form-control"  formControlName="city">
+  </div>
+
+  <div class="form-group">
+    <label>Postalcode</label>
+    <input type="text" class="form-control"  formControlName="postalcode">
+    <div *ngIf="userForm.controls['address'].controls['postalcode'].hasError('pattern')" class="alert alert-danger">
+     <span class="glyphicon glyphicon-warning-sign"></span> <strong> Please enter 5 digits </strong>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+<div *ngIf="userForm.valid" class="alert alert-success">
+   <span class="glyphicon glyphicon-ok-sign"></span> <strong> have correctly entered all fields </strong></div>
+  
+  <button  class="btn btn-primary" >Submit</button>
+</form>
+
+</div>
+
+
+
+
+
+
