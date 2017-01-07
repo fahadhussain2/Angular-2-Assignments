@@ -1,0 +1,8 @@
+<div>
+  <add-row *ngFor="let myadds of adds; let i=index"
+  [adds]="myadds" 
+  [value]="i"
+  (deletedAdd)="deleteProduct($event,i)">
+  
+  </add-row>
+  </div>

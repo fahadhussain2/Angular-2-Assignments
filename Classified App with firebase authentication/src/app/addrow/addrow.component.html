@@ -1,0 +1,36 @@
+<hr/>
+ <div class="container">
+
+
+ <div class="col-sm-1"></div>
+    <div class="col-sm-4 vline">
+    
+   <add-image 
+ [adds]="adds">
+ </add-image>
+
+ </div>
+
+<div class="col-sm-5 ">
+ <div>
+
+ <div><h3><b>{{ adds.name }}</b></h3></div> <br/><br/>
+ <div>Model # {{ adds.Modelno }}</div>
+ <div>Running: {{ adds.used }}</div>
+ <div>color: {{ adds.color }}</div>
+ 
+
+ </div>
+</div>
+
+
+<div class="col-sm-2">
+<price-display 
+ [price]="adds.price">
+ </price-display>  
+
+
+</div>
+
+
+  </div>
